@@ -7,7 +7,7 @@ This repository contains the scripts, logs, and analysis code used for the perfo
 ```
 ├── scripts/
 │   ├── 01_tools_eval_plant.sh        # Main benchmark on Manihot esculenta
-│   ├── 02_tools_eval_human.sh        # Main benchmark on Human (GIAB)
+│   ├── 02_tools_eval_human.sh        # Main benchmark on Homo sapiens
 │   ├── 03_plant_accuracy_assessment.sh  # Residual adapter quantification (Plant)
 │   ├── 04_human_accuracy_assessment.sh  # Residual adapter quantification (Human)
 │   ├── 05_plot_benchmark.R           # R script to generate Figure 3 (Time/Mem/Accuracy)
