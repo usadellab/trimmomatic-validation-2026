@@ -56,11 +56,12 @@ The evaluation pipeline consists of the following tests:
 *   Measures wall-clock time, CPU usage, and peak memory using `/usr/bin/time -v`.
 *   Runs all tools with a standardized thread count (40 threads) on the same HPC cluster.
 *   Standardized trimming parameters are used where possible (e.g., adapter clipping, sliding window quality trimming).
+*   Parameters: Standard TruSeq3 adapter trimming with a sliding window quality filter (Window:4, Quality:20) and minimum length of 36bp.
 
 ### 2. Accuracy Assessment
 **Scripts:** `03_plant_accuracy_assessment.sh`, `04_human_accuracy_assessment.sh`
 *   Evaluates the effectiveness of adapter removal.
-*   Searches for residual adapter seeds (`AGATCGGAAGAGC`) in the trimmed output files using `pragzip` (`rapidgzip`) and `grep` or `ripgrep`.
+*   Searches for residual adapter seeds (`AGATCGGAAGAGC`) using parallel decompression (`pragzip`) piped to SIMD-accelerated grep (`ripgrep`).
 
 ### 3. Scaling Stress Test
 **Script:** `07_scaling_benchmark.sh`
@@ -77,3 +78,30 @@ The evaluation pipeline consists of the following tests:
 *   **Benchmark Summary:** `05_plot_benchmark.R` parses the timing logs and accuracy counts to generate bar charts comparing Wall Clock Time, Peak Memory, and Residual Adapters.
 *   **Scaling Analysis:** `08_plot_scaling_benchmark.R` visualizes the scaling stress test results, plotting runtime against thread count to demonstrate parallel efficiency.
 *   **Output:** All generated plots are saved to the `figures/` directory.
+
+## Reproducing results
+The scripts are numbered in the order they should be executed.
+```
+# 1. Run main benchmarks (ensure input paths in scripts match your system)
+qsub 01_tools_eval_plant.sh
+qsub 02_tools_eval_human.sh
+
+# 2. Assess accuracy (counts residual adapters)
+qsub 03_plant_accuracy_assessment.sh
+qsub 04_human_accuracy_assessment.sh
+
+# 3. Generate main comparison figure (Figure 3)
+Rscript 05_plot_benchmark.R
+
+# 4. Run supplementary compression test
+qsub 06_compression_benchmark.sh
+
+# 5. Run scaling stress test
+qsub 07_scaling_benchmark.sh
+
+# 6. Generate scaling figure
+Rscript 08_plot_scaling_benchmark.R
+```
+
+## License
+These scripts are provided under the MIT License to facilitate transparency and reproducibility of the Trimmomatic v0.40 manuscript results.
