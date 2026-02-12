@@ -22,12 +22,14 @@ This repository contains the scripts, logs, and analysis code used for the perfo
 
 The following trimming tools were evaluated for performance (runtime/memory) and accuracy (adapter removal):
 
-1.  **Trimmomatic** (Java)
-2.  **fastp** (C++)
-3.  **BBDuk** (Java / BBMap suite)
-4.  **Skewer** (C++)
-5.  **Cutadapt** (Python)
-6.  **RabbitTrim** (C++)
+| Tool | Version | Language | Source |
+| :--- | :--- | :--- | :--- |
+| **Trimmomatic** | v0.40 | Java | GitHub |
+| **RabbitTrim** | v2.0.0 | C++ | Source Build (ISA-L/Zlib linked) |
+| **fastp** | v1.1.0 | C++ | Conda |
+| **BBDuk** | v39.52 | Java | Conda |
+| **Skewer** | v0.2.2 | C++ | Conda |
+| **Cutadapt** | v5.2 | Python/C | Conda |
 
 ## Datasets
 
@@ -56,12 +58,12 @@ The evaluation pipeline consists of the following tests:
 ### 2. Accuracy Assessment
 **Scripts:** `03_plant_accuracy_assessment.sh`, `04_human_accuracy_assessment.sh`
 *   Evaluates the effectiveness of adapter removal.
-*   Searches for residual adapter seeds (e.g., `AGATCGGAAGAGC`) in the trimmed output files using `pragzip` (`rapidgzip`) and `grep` or `ripgrep`.
+*   Searches for residual adapter seeds (`AGATCGGAAGAGC`) in the trimmed output files using `pragzip` (`rapidgzip`) and `grep` or `ripgrep`.
 
 ### 3. Scaling Stress Test
 **Script:** `07_scaling_benchmark.sh`
 *   Evaluates how well the tools scale with available resources.
-*   Runs benchmarks at varying thread counts (e.g., 20 vs 80 threads) to observe speedup efficiency.
+*   Runs benchmarks at varying thread counts (20 vs 80 threads) to observe speedup efficiency.
 
 ### 4. Compression Efficiency
 **Script:** `06_compression_benchmark.sh`
