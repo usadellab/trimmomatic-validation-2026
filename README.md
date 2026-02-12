@@ -49,6 +49,8 @@ Two distinct datasets were used to evaluate performance across different species
 
 The evaluation pipeline consists of the following tests:
 
+**Note**: The shell scripts (`.sh`) are designed for submission to an HPC cluster running Sun Grid Engine (SGE).
+
 ### 1. Performance Benchmarking
 **Scripts:** `01_tools_eval_plant.sh`, `02_tools_eval_human.sh`
 *   Measures wall-clock time, CPU usage, and peak memory using `/usr/bin/time -v`.
@@ -72,6 +74,6 @@ The evaluation pipeline consists of the following tests:
 
 ### 5. Data Visualization
 **Scripts:** `05_plot_benchmark.R`, `08_plot_scaling_benchmark.R`
-*   **Benchmark Summary:** `05_plot_benchmark.R` parses the timing logs and accuracy counts to generate bar charts comparing Wall Clock Time, Peak Memory, and Residual Adapters (Figure 3).
+*   **Benchmark Summary:** `05_plot_benchmark.R` parses the timing logs and accuracy counts to generate bar charts comparing Wall Clock Time, Peak Memory, and Residual Adapters.
 *   **Scaling Analysis:** `08_plot_scaling_benchmark.R` visualizes the scaling stress test results, plotting runtime against thread count to demonstrate parallel efficiency.
 *   **Output:** All generated plots are saved to the `figures/` directory.
