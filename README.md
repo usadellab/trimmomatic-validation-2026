@@ -6,16 +6,16 @@ This repository contains the scripts, logs, and analysis code used for the perfo
 
 ```
 ├── scripts/
-│   ├── 01_tools_eval_plant.sh        # Main benchmark on Manihot esculenta
-│   ├── 02_tools_eval_human.sh        # Main benchmark on Homo sapiens
+│   ├── 01_tools_eval_plant.sh           # Main benchmark on Manihot esculenta
+│   ├── 02_tools_eval_human.sh           # Main benchmark on Homo sapiens
 │   ├── 03_plant_accuracy_assessment.sh  # Residual adapter quantification (Plant)
 │   ├── 04_human_accuracy_assessment.sh  # Residual adapter quantification (Human)
-│   ├── 05_plot_benchmark.R           # R script to generate Figure 3 (Time/Mem/Accuracy)
-│   ├── 06_compression_benchmark.sh   # Parallel vs. Sequential compression test
-│   ├── 07_scaling_benchmark.sh       # Stress test (20 vs 80 threads)
-│   └── 08_plot_scaling_benchmark.R   # R script to visualize scaling efficiency
-├── logs/                             # Raw timing and output logs
-└── figures/                          # Generated plots (PDF/PNG)
+│   ├── 05_plot_benchmark.R              # R script to generate Figure 3 (Time/Mem/Accuracy)
+│   ├── 06_compression_benchmark.sh      # Parallel vs. Sequential compression test
+│   ├── 07_scaling_benchmark.sh          # Stress test (20 vs 80 threads)
+│   └── 08_plot_scaling_benchmark.R      # R script to visualize scaling efficiency
+├── logs/                                # Raw timing and output logs
+└── figures/                             # Generated plots (PDF/PNG)
 ```
 
 ## Tools investigated
@@ -88,6 +88,7 @@ The evaluation pipeline consists of the following tests:
 | Model | `AMD EPYC 7742 64-Core Processor` |
 | CPUs | `256` |
 | Threads per core | `2` |
+| Sockets | `2` |
 | Cores per socket | `64` |
 | RAM | `1 Tb` |
 
