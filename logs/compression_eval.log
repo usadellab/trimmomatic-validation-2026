@@ -1,0 +1,22 @@
+=== Compression Benchmark: Plant ===
+Host: cork.plabipd.de
+Date: Wed 11 Feb 08:50:12 CET 2026
+----------------------------------------------------------------
+Starting PARALLEL Run (40 Threads)...
+Parallel Run finished in 806 seconds.
+----------------------------------------------------------------
+Starting SEQUENTIAL Run (1 Thread)...
+Sequential Run finished in 14285 seconds.
+----------------------------------------------------------------
+COMPRESSION RATIO EVALUATION
+----------------------------------------------------------------
+Mode                 | R1 Size (Bytes) | R2 Size (Bytes)
+---------------------|-----------------|-----------------
+Parallel (40t)       | 11995412006     | 12321685393    
+Sequential (1t)      | 11995252346     | 12321543220    
+---------------------|-----------------|-----------------
+Size Difference (Parallel vs Sequential):
+R1: 0.00133103 %
+R2: 0.00115386 %
+----------------------------------------------------------------
+Done.

@@ -1,0 +1,49 @@
+java -ea  --add-modules jdk.incubator.vector -Xmx90g -Xms90g -cp /mnt/bin/bbmap/bbmap-v39.52-conda/opt/bbmap-39.52-0/current/ jgi.BBDuk -Xmx90g threads=40 ordered=f in=/mnt/data/project/2025_trimmomatic/trimmomatic_paper/raw/MS01_CasR09_R1_001.fastq.gz in2=/mnt/data/project/2025_trimmomatic/trimmomatic_paper/raw/MS01_CasR09_R2_001.fastq.gz out=/mnt/data/project/2025_trimmomatic/trimmomatic_paper/analysis/tools/bbduk_R1.fq.gz out2=/mnt/data/project/2025_trimmomatic/trimmomatic_paper/analysis/tools/bbduk_R2.fq.gz ref=/mnt/bin/trimmomatic/Trimmomatic-0.40/adapters/TruSeq3-PE-2-GGGGG.fa ktrim=r k=23 mink=11 hdist=1 tpe tbo
+WARNING: Using incubator modules: jdk.incubator.vector
+Executing jgi.BBDuk [-Xmx90g, threads=40, ordered=f, in=/mnt/data/project/2025_trimmomatic/trimmomatic_paper/raw/MS01_CasR09_R1_001.fastq.gz, in2=/mnt/data/project/2025_trimmomatic/trimmomatic_paper/raw/MS01_CasR09_R2_001.fastq.gz, out=/mnt/data/project/2025_trimmomatic/trimmomatic_paper/analysis/tools/bbduk_R1.fq.gz, out2=/mnt/data/project/2025_trimmomatic/trimmomatic_paper/analysis/tools/bbduk_R2.fq.gz, ref=/mnt/bin/trimmomatic/Trimmomatic-0.40/adapters/TruSeq3-PE-2-GGGGG.fa, ktrim=r, k=23, mink=11, hdist=1, tpe, tbo]
+Version 39.52
+
+maskMiddle was disabled because useShortKmers=true
+Allocating kmer table: 	0.037 seconds.
+Initial:
+Memory: max=96636m, total=96636m, free=96467m, used=169m
+
+Added 4663 kmers; time: 	0.052 seconds.
+Memory: max=96636m, total=96636m, free=96316m, used=320m
+
+Input is being processed as paired
+Started output streams:	0.042 seconds.
+Processing time:   		387.223 seconds.
+
+Input:                  	369320182 reads 		54061659458 bases.
+KTrimmed:               	1484969 reads (0.40%) 	117419759 bases (0.22%)
+Trimmed by overlap:     	648677 reads (0.18%) 	11647326 bases (0.02%)
+Total Removed:          	799116 reads (0.22%) 	129067085 bases (0.24%)
+Result:                 	368521066 reads (99.78%) 	53932592373 bases (99.76%)
+
+Time:                         	387.320 seconds.
+Reads Processed:        369m 	953.53k reads/sec
+Bases Processed:      54061m 	139.58m bases/sec
+	Command being timed: "bbduk.sh -Xmx90g threads=40 ordered=f in=/mnt/data/project/2025_trimmomatic/trimmomatic_paper/raw/MS01_CasR09_R1_001.fastq.gz in2=/mnt/data/project/2025_trimmomatic/trimmomatic_paper/raw/MS01_CasR09_R2_001.fastq.gz out=/mnt/data/project/2025_trimmomatic/trimmomatic_paper/analysis/tools/bbduk_R1.fq.gz out2=/mnt/data/project/2025_trimmomatic/trimmomatic_paper/analysis/tools/bbduk_R2.fq.gz ref=/mnt/bin/trimmomatic/Trimmomatic-0.40/adapters/TruSeq3-PE-2-GGGGG.fa ktrim=r k=23 mink=11 hdist=1 tpe tbo"
+	User time (seconds): 18721.89
+	System time (seconds): 262.88
+	Percent of CPU this job got: 4864%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 6:30.30
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 57061352
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 849
+	Minor (reclaiming a frame) page faults: 34938269
+	Voluntary context switches: 13322645
+	Involuntary context switches: 3894501
+	Swaps: 0
+	File system inputs: 124400
+	File system outputs: 54941728
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

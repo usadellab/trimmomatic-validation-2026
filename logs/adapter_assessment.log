@@ -1,0 +1,31 @@
+--------------------------------------------------------------------------------
+RESIDUAL ADAPTER ASSESSMENT
+Searching for seed: AGATCGGAAGAGC
+--------------------------------------------------------------------------------
+Tool                 | R1 Matches      | R2 Matches     
+---------------------|-----------------|-----------------
+Decompressed in total 62248275509 B in 47.551 s -> 1309.09 MB/s
+Decompressed in total 61298895003 B in 46.8529 s -> 1308.33 MB/s
+Trimmomatic          | 389             | 496            
+Decompressed in total 66120773579 B in 44.0366 s -> 1501.49 MB/s
+Decompressed in total 66118077491 B in 43.9793 s -> 1503.39 MB/s
+fastp                | 3430            | 1612           
+Decompressed in total 66542902221 B in 159.806 s -> 416.398 MB/s
+Decompressed in total 66554495999 B in 158.121 s -> 420.909 MB/s
+BBDuk                | 3951            | 7880           
+[Info] Detected a performance problem. Decoding might take longer than necessary. Please consider opening a performance bug report with a reproducing compressed file. Detailed information:
+[Info] Found mismatching block. Need offset 6958350351 B 7 b. Look in partition offset: 6958350336 B 0 b. Found possible range: [6958350336 B 0 b, 6958350336 B 0 b]
+[Info] Detected a performance problem. Decoding might take longer than necessary. Please consider opening a performance bug report with a reproducing compressed file. Detailed information:
+[Info] Found mismatching block. Need offset 11609833508 B 3 b. Look in partition offset: 11609833472 B 0 b. Found possible range: [11609833472 B 0 b, 11609833472 B 0 b]
+Decompressed in total 66581785793 B in 132.202 s -> 503.636 MB/s
+[Info] Detected a performance problem. Decoding might take longer than necessary. Please consider opening a performance bug report with a reproducing compressed file. Detailed information:
+[Info] Found mismatching block. Need offset 5918162953 B 1 b. Look in partition offset: 5918162944 B 0 b. Found possible range: [5918162944 B 0 b, 5918162944 B 0 b]
+[Info] Detected a performance problem. Decoding might take longer than necessary. Please consider opening a performance bug report with a reproducing compressed file. Detailed information:
+[Info] Found mismatching block. Need offset 12050235392 B 4 b. Look in partition offset: 12050235392 B 0 b. Found possible range: [12050235392 B 0 b, 12050235392 B 0 b]
+Decompressed in total 66646815325 B in 132.716 s -> 502.178 MB/s
+Skewer               | 4256            | 23343          
+Decompressed in total 66595976967 B in 65.3234 s -> 1019.48 MB/s
+Decompressed in total 66617764443 B in 65.4616 s -> 1017.66 MB/s
+Cutadapt             | 8474            | 35476          
+RabbitTrim           | 389             | 494            
+--------------------------------------------------------------------------------
