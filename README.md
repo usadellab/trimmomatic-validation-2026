@@ -1,4 +1,4 @@
-# Trimmomatic Benchmarking Repository
+# Trimmomatic Validation Repository
 
 This repository contains the scripts, logs, and analysis code used for the performance evaluation of Trimmomatic v0.40. The study benchmarks Trimmomatic against several state-of-the-art trimming tools.
 
