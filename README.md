@@ -4,6 +4,7 @@ This repository contains the scripts, logs, and analysis code used for the perfo
 
 ## Repository Structure
 
+```
 ├── scripts/
 │   ├── 01_tools_eval_plant.sh        # Main benchmark on Manihot esculenta
 │   ├── 02_tools_eval_human.sh        # Main benchmark on Human (GIAB)
@@ -15,6 +16,7 @@ This repository contains the scripts, logs, and analysis code used for the perfo
 │   └── 08_plot_scaling_benchmark.R   # R script to visualize scaling efficiency
 ├── logs/                             # Raw timing and output logs
 └── figures/                          # Generated plots (PDF/PNG)
+```
 
 ## Tools Investigated
 
