@@ -87,8 +87,8 @@ The evaluation pipeline consists of the following tests:
 | Kernel | `5.15.0-143-generic` |
 | Model | `AMD EPYC 7742 64-Core Processor` |
 | CPUs | `256` |
-| Threads per core | `2` |
 | Sockets | `2` |
+| Threads per core | `2` |
 | Cores per socket | `64` |
 | RAM | `1 Tb` |
 
