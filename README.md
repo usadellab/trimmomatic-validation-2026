@@ -90,7 +90,7 @@ qsub 02_tools_eval_human.sh
 qsub 03_plant_accuracy_assessment.sh
 qsub 04_human_accuracy_assessment.sh
 
-# 3. Generate main comparison figure (Figure 3)
+# 3. Generate main comparison figure
 Rscript 05_plot_benchmark.R
 
 # 4. Run supplementary compression test
