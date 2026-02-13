@@ -85,12 +85,12 @@ The evaluation pipeline consists of the following tests:
 | :--- | :--- | 
 | OS | `Ubuntu 22.04.5 LTS` |
 | Kernel | `5.15.0-143-generic` |
-| Model | `AMD EPYC 7742 64-Core Processor` |
+| Model | `AMD EPYC 7763 64-Core Processor` |
 | CPUs | `256` |
 | Sockets | `2` |
 | Threads per core | `2` |
 | Cores per socket | `64` |
-| RAM | `1 Tb` |
+| RAM | `2 Tb` |
 
 ## Reproducing results
 The scripts are numbered in the order they should be executed.
