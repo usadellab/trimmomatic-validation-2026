@@ -1,0 +1,14 @@
+Tool            | Read | Candidates | TRUE RESIDUALS  | False Positives
+---------------------------------------------------------------------------
+BBDuk           | R1   | 3951       | 128             | 3823           
+BBDuk           | R2   | 7880       | 3719            | 4161           
+Cutadapt        | R1   | 8474       | 223             | 8251           
+Cutadapt        | R2   | 35476      | 23651           | 11825          
+RabbitTrim      | R1   | 389        | 6               | 383            
+RabbitTrim      | R2   | 494        | 8               | 486            
+Skewer          | R1   | 4256       | 221             | 4035           
+Skewer          | R2   | 23343      | 14679           | 8664           
+Trimmomatic     | R1   | 389        | 6               | 383            
+Trimmomatic     | R2   | 496        | 8               | 488            
+fastp           | R1   | 3430       | 181             | 3249           
+fastp           | R2   | 1612       | 629             | 983            

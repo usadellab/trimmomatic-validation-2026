@@ -1,0 +1,29 @@
+--------------------------------------------------------------------------------
+RESIDUAL ADAPTER ASSESSMENT (DETAILED)
+Searching for seed: AGATCGGAAGAGC
+Output Directory: /mnt/data/project/2025_trimmomatic/trimmomatic_paper/analysis/residuals_detailed_human
+--------------------------------------------------------------------------------
+Tool                 | R1 Matches      | R2 Matches     
+---------------------|-----------------|-----------------
+Decompressed in total 11910508137 B in 12.9777 s -> 917.768 MB/s
+Decompressed in total 11565126763 B in 12.3715 s -> 934.817 MB/s
+Trimmomatic          | 66              | 11             
+Decompressed in total 12709867481 B in 13.429 s -> 946.446 MB/s
+Decompressed in total 12708086999 B in 16.3125 s -> 779.041 MB/s
+fastp                | 14              | 52             
+Decompressed in total 13241043025 B in 42.8251 s -> 309.189 MB/s
+Decompressed in total 13241043025 B in 45.2883 s -> 292.372 MB/s
+BBDuk                | 41              | 792            
+[Info] Detected a performance problem. Decoding might take longer than necessary. Please consider opening a performance bug report with a reproducing compressed file. Detailed information:
+[Info] Found mismatching block. Need offset 1027604485 B 0 b. Look in partition offset: 1027604480 B 0 b. Found possible range: [1027604480 B 0 b, 1027604480 B 0 b]
+[Info] Detected a performance problem. Decoding might take longer than necessary. Please consider opening a performance bug report with a reproducing compressed file. Detailed information:
+[Info] Found mismatching block. Need offset 2361393152 B 3 b. Look in partition offset: 2361393152 B 0 b. Found possible range: [2361393152 B 0 b, 2361393152 B 0 b]
+Decompressed in total 13254840265 B in 31.7303 s -> 417.735 MB/s
+Decompressed in total 13254840265 B in 31.824 s -> 416.504 MB/s
+Skewer               | 149             | 1267           
+Decompressed in total 13247218388 B in 15.2125 s -> 870.814 MB/s
+Decompressed in total 13244574570 B in 18.3693 s -> 721.017 MB/s
+Cutadapt             | 301             | 1363           
+RabbitTrim           | 66              | 11             
+--------------------------------------------------------------------------------
+Detailed residual files saved to: /mnt/data/project/2025_trimmomatic/trimmomatic_paper/analysis/residuals_detailed_human

@@ -6,14 +6,14 @@ This repository contains the scripts, logs, and analysis code used for the perfo
 
 ```
 ├── scripts/
-│   ├── 01_tools_eval_plant.sh           # Main benchmark on Manihot esculenta
-│   ├── 02_tools_eval_human.sh           # Main benchmark on Homo sapiens
-│   ├── 03_plant_accuracy_assessment.sh  # Residual adapter quantification (Plant)
-│   ├── 04_human_accuracy_assessment.sh  # Residual adapter quantification (Human)
-│   ├── 05_plot_benchmark.R              # R script to generate Figure 3 (Time/Mem/Accuracy)
-│   ├── 06_compression_benchmark.sh      # Parallel vs. Sequential compression test
-│   ├── 07_scaling_benchmark.sh          # Stress test (20 vs 80 threads)
-│   └── 08_plot_scaling_benchmark.R      # R script to visualize scaling efficiency
+│   ├── 01_scaling_benchmark.sh          # Scaling stress test (Plant & Human)
+│   ├── 02_residuals_detailed_plant.sh   # Residual adapter assessment (Plant)
+│   ├── 03_residuals_detailed_human.sh   # Residual adapter assessment (Human)
+│   ├── 04_verify_residuals.py           # Python script for residual verification
+│   ├── 05_rabbit_paper_benchmark.sh     # RabbitTrim paper benchmark
+│   ├── 06_compression_benchmark.sh      # Parallel vs. Sequential compression test 
+│   ├── 07_plot_scaling.R                # R script to visualize scaling
+│   └── 08_plot_rabbit_paper_benchmark.R # R script to visualize rabbittrim paper benchmark
 ├── logs/                                # Raw timing and output logs
 └── figures/                             # Generated plots (PDF/PNG)
 ```
@@ -33,7 +33,7 @@ The following trimming tools were evaluated for performance (runtime/memory) and
 
 ## Datasets
 
-Two distinct datasets were used to evaluate performance across different species and complexity levels:
+Three distinct datasets were used to evaluate performance across different species and complexity levels:
 
 1.  **Plant dataset (*Manihot esculenta*)**
     *   **Accession:** ERR15075373
@@ -45,39 +45,46 @@ Two distinct datasets were used to evaluate performance across different species
     *   **Description:** Paired-end sequencing data from Human.
     *   **Filename in scripts:** `SRR2052337_1.fastq.gz`, `SRR2052337_2.fastq.gz`
 
+3.  **Human dataset (RabbitTrim Benchmark)**
+    *   **Accession:** SRR7890824
+    *   **Description:** Human dataset used for direct comparison with RabbitTrim publication results.
+    *   **Filename in scripts:** `SRR7890824_1.fastq.gz`, `SRR7890824_2.fastq.gz`
+
 ## Methodology
 
 The evaluation pipeline consists of the following tests:
 
 **Note**: The shell scripts (`.sh`) are designed for submission to an HPC cluster running Sun Grid Engine (SGE).
 
-### 1. Performance benchmarking
-**Scripts:** `01_tools_eval_plant.sh`, `02_tools_eval_human.sh`
-*   Measures wall-clock time, CPU usage, and peak memory using `/usr/bin/time -v`.
-*   Runs all tools with a standardized thread count (40 threads) on the same HPC cluster.
-*   Standardized trimming parameters are used where possible (e.g., adapter clipping, sliding window quality trimming).
-*   Parameters: Standard TruSeq3 adapter trimming with a sliding window quality filter (Window:4, Quality:20) and minimum length of 36bp.
+### 1. Scaling & Performance Benchmark
+**Script:** `01_scaling_benchmark.sh`
+*   **Objective:** Comprehensive evaluation of runtime scaling and resource usage across varying thread counts.
+*   **Tools:** Trimmomatic, RabbitTrim, fastp, BBDuk, Skewer, Cutadapt.
+*   **Datasets:** Runs on both Plant and Human datasets.
+*   **Metrics:** Wall-clock time, Peak Memory (RSS), and CPU efficiency.
+*   **Configuration:** Tests thread counts of 8, 16, 20, 40, 80, 160, and 240 to determine parallel efficiency limits.
 
-### 2. Accuracy assessment
-**Scripts:** `03_plant_accuracy_assessment.sh`, `04_human_accuracy_assessment.sh`
-*   Evaluates the effectiveness of adapter removal.
-*   Searches for residual adapter seeds (`AGATCGGAAGAGC`) using parallel decompression (`pragzip`) piped to SIMD-accelerated grep (`ripgrep`).
+### 2. Accuracy & Residual Assessment
+**Scripts:** `02_residuals_detailed_plant.sh`, `03_residuals_detailed_human.sh`, `04_verify_residuals.py`
+*   **Objective:** Quantify adapter removal accuracy and detect false positives.
+*   **Detection:** Uses `ripgrep` to search for the specific TruSeq3 adapter seed (`AGATCGGAAGAGC`) in the trimmed output files.
+*   **Verification:** `04_verify_residuals.py` analyzes the context of residual seeds to distinguish between true adapter remnants and random genomic matches or artifacts.
 
-### 3. Scaling stress test
-**Script:** `07_scaling_benchmark.sh`
-*   Evaluates how well the tools scale with available resources.
-*   Runs benchmarks at varying thread counts (20 vs 80 threads) to observe speedup efficiency.
+### 3. RabbitTrim Paper Replication
+**Script:** `06_rabbit_paper_benchmark.sh`
+*   **Objective:** Replicate the specific benchmark scenario presented in the RabbitTrim publication. Adding the important `compressionLevel` setting to produce comparable results.
+*   **Dataset:** SRR7890824 (Human).
+*   **Comparison:** Direct comparison of Trimmomatic and RabbitTrim scaling from 8 to 128 threads.
 
-### 4. Compression efficiency
-**Script:** `06_compression_benchmark.sh`
-*   Specifically tests the parallel output compression feature in Trimmomatic v0.40.
-*   Compares file size and compression time between parallel (multi-threaded) and sequential (single-threaded) gzip output modes.
+### 4. Compression Efficiency
+**Script:** `07_compression_benchmark.sh`
+*   **Objective:** Evaluate the performance impact of Trimmomatic's parallel output compression.
+*   **Method:** Compares 40-thread parallel compression against single-threaded sequential compression to calculate size overhead and time savings.
 
-### 5. Data visualization
-**Scripts:** `05_plot_benchmark.R`, `08_plot_scaling_benchmark.R`
-*   **Benchmark Summary:** `05_plot_benchmark.R` parses the timing logs and accuracy counts to generate bar charts comparing Wall Clock Time, Peak Memory, and Residual Adapters.
-*   **Scaling Analysis:** `08_plot_scaling_benchmark.R` visualizes the scaling stress test results, plotting runtime against thread count to demonstrate parallel efficiency.
-*   **Output:** All generated plots are saved to the `figures/` directory.
+### 5. Data Visualization
+**Script:** `05_plot_scaling.R`
+*   **Objective:** Visualize the results from the scaling benchmark adn residual adapter analysis.
+*   **Output:** Generates plots for Wall Clock Time, Peak Memory usage, and Fold Speedup across all thread counts and tools. Also displays with the verified residual adapter counts for all tools.
 
 ## Validation environment
 
@@ -96,24 +103,23 @@ The evaluation pipeline consists of the following tests:
 The scripts are numbered in the order they should be executed.
 ```
 # 1. Run main benchmarks (ensure input paths in scripts match your system)
-qsub 01_tools_eval_plant.sh
-qsub 02_tools_eval_human.sh
+qsub 01_scaling_benchmark.sh
 
 # 2. Assess accuracy (counts residual adapters)
-qsub 03_plant_accuracy_assessment.sh
-qsub 04_human_accuracy_assessment.sh
+qsub 02_residuals_detailed_plant.sh
+qsub 03_residuals_detailed_human.sh
+python3 04_verify_residuals.py analysis/residuals_detailed_plant/* > analysis/residuals_detailed_plant/verified_residuals.txt
+python3 04_verify_residuals.py analysis/residuals_detailed_human/* > analysis/residuals_detailed_human/verified_residuals.txt
 
-# 3. Generate main comparison figure
-Rscript 05_plot_benchmark.R
+# 3. Run supplementary rabbittrim paper benchmark
+qsub 05_rabbit_paper_benchmark.sh
 
 # 4. Run supplementary compression test
 qsub 06_compression_benchmark.sh
 
-# 5. Run scaling stress test
-qsub 07_scaling_benchmark.sh
-
-# 6. Generate scaling figure
-Rscript 08_plot_scaling_benchmark.R
+# 5. Generate figures
+Rscript 07_plot_scaling.R
+Rscript 08_plot_rabbit_paper_benchmark.R
 ```
 
 ## License

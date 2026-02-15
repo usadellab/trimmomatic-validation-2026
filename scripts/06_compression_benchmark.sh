@@ -27,7 +27,6 @@ ADAPTERS="/mnt/bin/trimmomatic/Trimmomatic-0.40/adapters/TruSeq3-PE-2-GGGGG.fa"
 TRIM_STEPS="ILLUMINACLIP:${ADAPTERS}:2:30:10 SLIDINGWINDOW:4:20 MINLEN:36"
 
 echo "=== Compression Benchmark: Plant ==="
-echo "Host: $(hostname)"
 echo "Date: $(date)"
 
 # --- 1. Parallel Compression (40 Threads) ---

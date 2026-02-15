@@ -1,0 +1,33 @@
+--------------------------------------------------------------------------------
+RESIDUAL ADAPTER ASSESSMENT (DETAILED)
+Searching for seed: AGATCGGAAGAGC
+Output Directory: /mnt/data/project/2025_trimmomatic/trimmomatic_paper/analysis/residuals_detailed_plant
+--------------------------------------------------------------------------------
+Tool                 | R1 Matches      | R2 Matches     
+---------------------|-----------------|-----------------
+Decompressed in total 62248275509 B in 49.9371 s -> 1246.53 MB/s
+Decompressed in total 61298895003 B in 47.3841 s -> 1293.66 MB/s
+Trimmomatic          | 389             | 496            
+Decompressed in total 66120773579 B in 45.7138 s -> 1446.41 MB/s
+Decompressed in total 66118077491 B in 45.8615 s -> 1441.69 MB/s
+fastp                | 3430            | 1612           
+Decompressed in total 66542902221 B in 157.143 s -> 423.454 MB/s
+Decompressed in total 66554495999 B in 155.299 s -> 428.558 MB/s
+BBDuk                | 3951            | 7880           
+[Info] Detected a performance problem. Decoding might take longer than necessary. Please consider opening a performance bug report with a reproducing compressed file. Detailed information:
+[Info] Found mismatching block. Need offset 6958350351 B 7 b. Look in partition offset: 6958350336 B 0 b. Found possible range: [6958350336 B 0 b, 6958350336 B 0 b]
+[Info] Detected a performance problem. Decoding might take longer than necessary. Please consider opening a performance bug report with a reproducing compressed file. Detailed information:
+[Info] Found mismatching block. Need offset 11609833508 B 3 b. Look in partition offset: 11609833472 B 0 b. Found possible range: [11609833472 B 0 b, 11609833472 B 0 b]
+Decompressed in total 66581785793 B in 130.357 s -> 510.764 MB/s
+[Info] Detected a performance problem. Decoding might take longer than necessary. Please consider opening a performance bug report with a reproducing compressed file. Detailed information:
+[Info] Found mismatching block. Need offset 5918162953 B 1 b. Look in partition offset: 5918162944 B 0 b. Found possible range: [5918162944 B 0 b, 5918162944 B 0 b]
+[Info] Detected a performance problem. Decoding might take longer than necessary. Please consider opening a performance bug report with a reproducing compressed file. Detailed information:
+[Info] Found mismatching block. Need offset 12050235392 B 4 b. Look in partition offset: 12050235392 B 0 b. Found possible range: [12050235392 B 0 b, 12050235392 B 0 b]
+Decompressed in total 66646815325 B in 129.166 s -> 515.977 MB/s
+Skewer               | 4256            | 23343          
+Decompressed in total 66595976967 B in 68.4674 s -> 972.667 MB/s
+Decompressed in total 66617764443 B in 64.3524 s -> 1035.2 MB/s
+Cutadapt             | 8474            | 35476          
+RabbitTrim           | 389             | 494            
+--------------------------------------------------------------------------------
+Detailed residual files saved to: /mnt/data/project/2025_trimmomatic/trimmomatic_paper/analysis/residuals_detailed_plant

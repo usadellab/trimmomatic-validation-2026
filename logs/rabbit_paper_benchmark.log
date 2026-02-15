@@ -1,0 +1,25 @@
+==========================================================
+STARTING BENCHMARK: SRR7890824 (Human - RabbitTrim Paper)
+Date: Sat Feb 14 07:32:57 AM CET 2026
+==========================================================
+>>> Running RabbitTrim | Threads: 128
+    Success.
+>>> Running Trimmomatic | Threads: 128
+    Success.
+>>> Running RabbitTrim | Threads: 64
+    Success.
+>>> Running Trimmomatic | Threads: 64
+    Success.
+>>> Running RabbitTrim | Threads: 32
+    Success.
+>>> Running Trimmomatic | Threads: 32
+    Success.
+>>> Running RabbitTrim | Threads: 16
+    Success.
+>>> Running Trimmomatic | Threads: 16
+    Success.
+>>> Running RabbitTrim | Threads: 8
+    Success.
+>>> Running Trimmomatic | Threads: 8
+    Success.
+Benchmark complete.
