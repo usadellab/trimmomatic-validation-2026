@@ -71,20 +71,20 @@ The evaluation pipeline consists of the following tests:
 *   **Verification:** `04_verify_residuals.py` analyzes the context of residual seeds to distinguish between true adapter remnants and random genomic matches or artifacts.
 
 ### 3. RabbitTrim Paper Replication
-**Script:** `06_rabbit_paper_benchmark.sh`
+**Script:** `05_rabbit_paper_benchmark.sh`
 *   **Objective:** Replicate the specific benchmark scenario presented in the RabbitTrim publication. Adding the important `compressionLevel` setting to produce comparable results.
 *   **Dataset:** SRR7890824 (Human).
 *   **Comparison:** Direct comparison of Trimmomatic and RabbitTrim scaling from 8 to 128 threads.
 
 ### 4. Compression Efficiency
-**Script:** `07_compression_benchmark.sh`
+**Script:** `06_compression_benchmark.sh`
 *   **Objective:** Evaluate the performance impact of Trimmomatic's parallel output compression.
 *   **Method:** Compares 40-thread parallel compression against single-threaded sequential compression to calculate size overhead and time savings.
 
 ### 5. Data Visualization
-**Script:** `05_plot_scaling.R`
-*   **Objective:** Visualize the results from the scaling benchmark adn residual adapter analysis.
-*   **Output:** Generates plots for Wall Clock Time, Peak Memory usage, and Fold Speedup across all thread counts and tools. Also displays with the verified residual adapter counts for all tools.
+**Script:** `07_plot_scaling.R`, `08_plot_rabbit_paper_benchmark.R`
+*   **Objective:** Visualize the results from the scaling benchmark and residual adapter analysis, aswell as the visualization of the results from the rabbittrim paper benchmark.
+*   **Output:** Generates plots for Wall Clock Time, Peak Memory usage, and Fold Speedup across all thread counts and tools. Also displays with the verified residual adapter counts for all tools. Generates Wall Clock Time and Peak Memory usage from the comparison of Trimmomatic with RabbitTrim.
 
 ## Validation environment
 
