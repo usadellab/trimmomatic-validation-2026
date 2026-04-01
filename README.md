@@ -14,6 +14,11 @@ This repository contains the scripts, logs, and analysis code used for the perfo
 │   ├── 06_compression_benchmark.sh      # Parallel vs. Sequential compression test 
 │   ├── 07_plot_scaling.R                # R script to visualize scaling
 │   └── 08_plot_rabbit_paper_benchmark.R # R script to visualize rabbittrim paper benchmark
+│   ├── 09_scaling_benchmark_part2.sh    # Extended scaling stress test (1, 2, 4 threads)
+│   ├── 10_plot_scaling_part2.R          # R script to visualize extended scaling
+│   ├── 11_filesizes.sh                  # Evaluates compressed output filesizes
+│   ├── 12_scaling_benchmark_uncompressed.sh # Scaling benchmark with uncompressed outputs
+│   └── 13_wall_time_uncompressed.sh     # Utility to extract uncompressed wall times
 ├── logs/                                # Raw timing and output logs
 └── figures/                             # Generated plots (PDF/PNG)
 ```
@@ -86,6 +91,11 @@ The evaluation pipeline consists of the following tests:
 *   **Objective:** Visualize the results from the scaling benchmark and residual adapter analysis, aswell as the visualization of the results from the rabbittrim paper benchmark.
 *   **Output:** Generates plots for Wall Clock Time, Peak Memory usage, and Fold Speedup across all thread counts and tools. Also displays with the verified residual adapter counts for all tools. Generates Wall Clock Time and Peak Memory usage from the comparison of Trimmomatic with RabbitTrim.
 
+### 6. Extended Evaluation & Uncompressed Benchmarks
+**Scripts:** `09_scaling_benchmark_part2.sh`, `10_plot_scaling_part2.R`, `11_filesizes.sh`, `12_scaling_benchmark_uncompressed.sh`, `13_wall_time_uncompressed.sh`
+*   **Objective:** Evaluate performance at lower thread counts (1, 2, and 4) and compare the processing speed without the overhead of gzip compression on outputs.
+*   **Metrics:** Compression efficiency is also evaluated by comparing the final size of the trimmed reads (`11_filesizes.sh`). Uncompressed runtimes are extracted via the `13_wall_time_uncompressed.sh` utility script.
+
 ## Validation environment
 
 | Component | Details | 
@@ -120,6 +130,15 @@ qsub 06_compression_benchmark.sh
 # 5. Generate figures
 Rscript 07_plot_scaling.R
 Rscript 08_plot_rabbit_paper_benchmark.R
+
+# 6. Run extended scaling evaluation and plot
+qsub 09_scaling_benchmark_part2.sh
+Rscript 10_plot_scaling_part2.R
+
+# 7. Evaluate file sizes and run uncompressed benchmarks
+bash 11_filesizes.sh
+qsub 12_scaling_benchmark_uncompressed.sh
+bash 13_wall_time_uncompressed.sh
 ```
 
 ## License

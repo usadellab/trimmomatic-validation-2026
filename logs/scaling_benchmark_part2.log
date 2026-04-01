@@ -1,0 +1,74 @@
+==========================================================
+STARTING PLANT DATASET
+==========================================================
+>>> Running Trimmomatic | Dataset: Plant | Threads: 4
+    Success.
+>>> Running fastp | Dataset: Plant | Threads: 4
+    Success.
+>>> Running RabbitTrim | Dataset: Plant | Threads: 4
+    Success.
+>>> Running BBDuk | Dataset: Plant | Threads: 4
+    Success.
+>>> Running skewer | Dataset: Plant | Threads: 4
+    Success.
+>>> Running Cutadapt | Dataset: Plant | Threads: 4
+    Success.
+>>> Running Trimmomatic | Dataset: Plant | Threads: 2
+    Success.
+>>> Running fastp | Dataset: Plant | Threads: 2
+    Success.
+>>> Running RabbitTrim | Dataset: Plant | Threads: 2
+    Success.
+>>> Running BBDuk | Dataset: Plant | Threads: 2
+    Success.
+>>> Running skewer | Dataset: Plant | Threads: 2
+    Success.
+>>> Running Cutadapt | Dataset: Plant | Threads: 2
+    Success.
+>>> Running Trimmomatic | Dataset: Plant | Threads: 1
+    Success.
+>>> Running fastp | Dataset: Plant | Threads: 1
+    Success.
+>>> Running RabbitTrim | Dataset: Plant | Threads: 1
+    Success.
+>>> Running BBDuk | Dataset: Plant | Threads: 1
+==========================================================
+STARTING HUMAN DATASET
+==========================================================
+>>> Running Trimmomatic | Dataset: Human | Threads: 4
+    Success.
+>>> Running fastp | Dataset: Human | Threads: 4
+    Success.
+>>> Running RabbitTrim | Dataset: Human | Threads: 4
+    Success.
+>>> Running BBDuk | Dataset: Human | Threads: 4
+    Success.
+>>> Running skewer | Dataset: Human | Threads: 4
+    Success.
+>>> Running Cutadapt | Dataset: Human | Threads: 4
+    Success.
+>>> Running Trimmomatic | Dataset: Human | Threads: 2
+    Success.
+>>> Running fastp | Dataset: Human | Threads: 2
+    Success.
+>>> Running RabbitTrim | Dataset: Human | Threads: 2
+    Success.
+>>> Running BBDuk | Dataset: Human | Threads: 2
+    Success.
+>>> Running skewer | Dataset: Human | Threads: 2
+    Success.
+>>> Running Cutadapt | Dataset: Human | Threads: 2
+    Success.
+>>> Running Trimmomatic | Dataset: Human | Threads: 1
+    Success.
+>>> Running fastp | Dataset: Human | Threads: 1
+    Success.
+>>> Running RabbitTrim | Dataset: Human | Threads: 1
+    Success.
+>>> Running BBDuk | Dataset: Human | Threads: 1
+    Success.
+>>> Running skewer | Dataset: Human | Threads: 1
+    Success.
+>>> Running Cutadapt | Dataset: Human | Threads: 1
+    Success.
+All scaling tests complete.

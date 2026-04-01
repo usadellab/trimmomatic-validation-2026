@@ -1,0 +1,36 @@
+TrimmomaticPE: Started with arguments:
+ -threads 2 -compressLevel 6 /mnt/data/project/2025_trimmomatic/trimmomatic_paper/raw/MS01_CasR09_R1_001.fastq.gz /mnt/data/project/2025_trimmomatic/trimmomatic_paper/raw/MS01_CasR09_R2_001.fastq.gz /mnt/data/project/2025_trimmomatic/trimmomatic_paper/analysis/scaling_extended_v2/Plant_Trimmomatic_2t_R1.fq.gz /mnt/data/project/2025_trimmomatic/trimmomatic_paper/analysis/scaling_extended_v2/Plant_Trimmomatic_2t_R1_U.fq.gz /mnt/data/project/2025_trimmomatic/trimmomatic_paper/analysis/scaling_extended_v2/Plant_Trimmomatic_2t_R2.fq.gz /mnt/data/project/2025_trimmomatic/trimmomatic_paper/analysis/scaling_extended_v2/Plant_Trimmomatic_2t_R2_U.fq.gz ILLUMINACLIP:/mnt/bin/trimmomatic/Trimmomatic-0.40/adapters/TruSeq3-PE-2-GGGGG.fa:2:30:10 SLIDINGWINDOW:4:20 MINLEN:36
+ILLUMINACLIP: Using adapter file from user-specified absolute path: /mnt/bin/trimmomatic/Trimmomatic-0.40/adapters/TruSeq3-PE-2-GGGGG.fa
+Using PrefixPair: 'TACACTCTTTCCCTACACGACGCTCTTCCGATCT' and 'GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT'
+Using Long Clipping Sequence: 'AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTA'
+Using Long Clipping Sequence: 'GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG'
+Using Long Clipping Sequence: 'AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC'
+Using Long Clipping Sequence: 'GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT'
+Using Long Clipping Sequence: 'TACACTCTTTCCCTACACGACGCTCTTCCGATCT'
+ILLUMINACLIP: Using 1 prefix pairs, 5 forward/reverse sequences, 0 forward only sequences, 0 reverse only sequences
+Quality encoding detected as phred33
+Input Read Pairs: 184660091 Both Surviving: 175696809 (95.15%) Forward Only Surviving: 5393116 (2.92%) Reverse Only Surviving: 2094365 (1.13%) Dropped: 1475801 (0.80%)
+TrimmomaticPE: Completed successfully
+	Command being timed: "java -jar /mnt/bin/trimmomatic/Trimmomatic-0.40/trimmomatic-0.40.jar PE -threads 2 -compressLevel 6 /mnt/data/project/2025_trimmomatic/trimmomatic_paper/raw/MS01_CasR09_R1_001.fastq.gz /mnt/data/project/2025_trimmomatic/trimmomatic_paper/raw/MS01_CasR09_R2_001.fastq.gz /mnt/data/project/2025_trimmomatic/trimmomatic_paper/analysis/scaling_extended_v2/Plant_Trimmomatic_2t_R1.fq.gz /mnt/data/project/2025_trimmomatic/trimmomatic_paper/analysis/scaling_extended_v2/Plant_Trimmomatic_2t_R1_U.fq.gz /mnt/data/project/2025_trimmomatic/trimmomatic_paper/analysis/scaling_extended_v2/Plant_Trimmomatic_2t_R2.fq.gz /mnt/data/project/2025_trimmomatic/trimmomatic_paper/analysis/scaling_extended_v2/Plant_Trimmomatic_2t_R2_U.fq.gz ILLUMINACLIP:/mnt/bin/trimmomatic/Trimmomatic-0.40/adapters/TruSeq3-PE-2-GGGGG.fa:2:30:10 SLIDINGWINDOW:4:20 MINLEN:36"
+	User time (seconds): 13380.95
+	System time (seconds): 335.93
+	Percent of CPU this job got: 239%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:35:21
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6261232
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 4487
+	Minor (reclaiming a frame) page faults: 30542492
+	Voluntary context switches: 1626547
+	Involuntary context switches: 58885
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 48589136
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

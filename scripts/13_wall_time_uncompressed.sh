@@ -1,0 +1,1 @@
+grep "wall clock" /mnt/data/project/2025_trimmomatic/trimmomatic_paper/logs/scaling_uncompressed/*.time.log
