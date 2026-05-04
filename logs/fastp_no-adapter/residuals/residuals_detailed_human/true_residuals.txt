@@ -1,0 +1,4 @@
+Tool            | Read | Candidates | TRUE RESIDUALS  | False Positives
+---------------------------------------------------------------------------
+fastp_R1        | R1   | 590        | 1               | 589
+fastp_R2        | R2   | 646        | 502             | 144
