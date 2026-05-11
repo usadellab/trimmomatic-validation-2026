@@ -18,7 +18,11 @@ This repository contains the scripts, logs, and analysis code used for the perfo
 │   ├── 10_plot_scaling_part2.R          # R script to visualize extended scaling
 │   ├── 11_filesizes.sh                  # Evaluates compressed output filesizes
 │   ├── 12_scaling_benchmark_uncompressed.sh # Scaling benchmark with uncompressed outputs
-│   └── 13_wall_time_uncompressed.sh     # Utility to extract uncompressed wall times
+│   ├── 13_wall_time_uncompressed.sh     # Utility to extract uncompressed wall times
+│   ├── 14_scaling_benchmark_fastp-v1.1.0-no-adapters.sh # fastp v1.1.0 scaling (no adapters)
+│   ├── 15_scaling_benchmark_fastp-v1.3.3-no-adapters.sh # fastp v1.3.3 scaling (no adapters)
+│   ├── 16_scaling_benchmark_fastp-v1.3.3.sh             # fastp v1.3.3 scaling (with adapters)
+│   └── 17_plot_comparison_fastp.R       # R script to visualize fastp comparison
 ├── logs/                                # Raw timing and output logs
 └── figures/                             # Generated plots (PDF/PNG)
 ```
@@ -96,6 +100,11 @@ The evaluation pipeline consists of the following tests:
 *   **Objective:** Evaluate performance at lower thread counts (1, 2, and 4) and compare the processing speed without the overhead of gzip compression on outputs.
 *   **Metrics:** Compression efficiency is also evaluated by comparing the final size of the trimmed reads (`11_filesizes.sh`). Uncompressed runtimes are extracted via the `13_wall_time_uncompressed.sh` utility script.
 
+### 7. Deep fastp evaluation
+**Scripts:** `14_scaling_benchmark_fastp-v1.1.0-no-adapters.sh`, `15_scaling_benchmark_fastp-v1.3.3-no-adapters.sh`, `16_scaling_benchmark_fastp-v1.3.3.sh`, `17_plot_comparison_fastp.R` 
+* **Objective:** Detailed scaling and accuracy analysis of fastp across different versions (v1.1.0 and v1.3.3) and adapter settings. 
+* **Note:** The datapoint for threads = 20 was excluded from this evaluation as fastp v1.3.3 did not terminate when running under this configuration, which is probably due to a software bug. 
+
 ## Validation environment
 
 | Component | Details | 
@@ -139,6 +148,13 @@ Rscript 10_plot_scaling_part2.R
 bash 11_filesizes.sh
 qsub 12_scaling_benchmark_uncompressed.sh
 bash 13_wall_time_uncompressed.sh
+
+# 8. Deep fastp evaluation 
+qsub 14_scaling_benchmark_fastp-v1.1.0-no-adapters.sh 
+qsub 15_scaling_benchmark_fastp-v1.3.3-no-adapters.sh 
+qsub 16_scaling_benchmark_fastp-v1.3.3.sh 
+
+Rscript 17_plot_comparison_fastp.R
 ```
 
 ## License

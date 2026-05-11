@@ -1,0 +1,69 @@
+Read1 before filtering:
+total reads: 36423926
+total bases: 5390741048
+Q20 bases: 5304733414(98.4045%)
+Q30 bases: 5116346613(94.9099%)
+Q40 bases: 1530930936(28.3993%)
+
+Read2 before filtering:
+total reads: 36423926
+total bases: 5390741048
+Q20 bases: 5079751107(94.231%)
+Q30 bases: 4679888422(86.8135%)
+Q40 bases: 1283114411(23.8022%)
+
+Read1 after filtering:
+total reads: 35035722
+total bases: 5161488649
+Q20 bases: 5102708764(98.8612%)
+Q30 bases: 4947883066(95.8616%)
+Q40 bases: 1504232966(29.1434%)
+
+Read2 after filtering:
+total reads: 35035722
+total bases: 5161488649
+Q20 bases: 4985528028(96.5909%)
+Q30 bases: 4635818870(89.8155%)
+Q40 bases: 1276043495(24.7224%)
+
+Filtering result:
+reads passed filter: 70071444
+reads failed due to low quality: 2751484
+reads failed due to too many N: 24924
+reads failed due to too short: 0
+reads failed due to adapter dimer: 0
+reads with adapter trimmed: 883788
+bases trimmed due to adapters: 47657064
+
+Duplication rate: 0.011756%
+
+Insert size peak (evaluated by paired-end reads): 264
+
+JSON report: /mnt/data/project/2025_trimmomatic/trimmomatic_paper/analysis/scaling_extended_fastp2/Human_fastp-v1.3.3_16t.stress.json
+HTML report: /mnt/data/project/2025_trimmomatic/trimmomatic_paper/analysis/scaling_extended_fastp2/Human_fastp-v1.3.3_16t.stress.html
+
+fastp --thread 16 -i /mnt/data/project/2025_trimmomatic/trimmomatic_paper/raw/SRR2052337_1.fastq.gz -I /mnt/data/project/2025_trimmomatic/trimmomatic_paper/raw/SRR2052337_2.fastq.gz -o /mnt/data/project/2025_trimmomatic/trimmomatic_paper/analysis/scaling_extended_fastp2/Human_fastp-v1.3.3_16t_R1.fq.gz -O /mnt/data/project/2025_trimmomatic/trimmomatic_paper/analysis/scaling_extended_fastp2/Human_fastp-v1.3.3_16t_R2.fq.gz --compression 6 --json /mnt/data/project/2025_trimmomatic/trimmomatic_paper/analysis/scaling_extended_fastp2/Human_fastp-v1.3.3_16t.stress.json --html /mnt/data/project/2025_trimmomatic/trimmomatic_paper/analysis/scaling_extended_fastp2/Human_fastp-v1.3.3_16t.stress.html 
+fastp v1.3.3, time used: 84 seconds
+	Command being timed: "fastp --thread 16 -i /mnt/data/project/2025_trimmomatic/trimmomatic_paper/raw/SRR2052337_1.fastq.gz -I /mnt/data/project/2025_trimmomatic/trimmomatic_paper/raw/SRR2052337_2.fastq.gz -o /mnt/data/project/2025_trimmomatic/trimmomatic_paper/analysis/scaling_extended_fastp2/Human_fastp-v1.3.3_16t_R1.fq.gz -O /mnt/data/project/2025_trimmomatic/trimmomatic_paper/analysis/scaling_extended_fastp2/Human_fastp-v1.3.3_16t_R2.fq.gz --compression 6 --json /mnt/data/project/2025_trimmomatic/trimmomatic_paper/analysis/scaling_extended_fastp2/Human_fastp-v1.3.3_16t.stress.json --html /mnt/data/project/2025_trimmomatic/trimmomatic_paper/analysis/scaling_extended_fastp2/Human_fastp-v1.3.3_16t.stress.html"
+	User time (seconds): 979.92
+	System time (seconds): 21.90
+	Percent of CPU this job got: 1179%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:24.97
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1535556
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 2789662
+	Voluntary context switches: 904324
+	Involuntary context switches: 905
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 15455104
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
